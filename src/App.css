@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Yuji+Boku&display=swap");
+
+root,
+html,
+body {
+  background-color: black;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  color: white;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.App {
+  font-weight: 500;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  margin: 40px 0;
+}
+
+.username-input {
+  font-family: "Roboto Mono", monospace;
+  font-size: medium;
+  font-weight: bold;
+  color: white;
+  width: 100%;
+  background-color: #0a0a0a;
+  border: 1px solid #292929;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.username-input::placeholder {
+  color: #acacac;
+}
+
+.loading {
+  width: auto;
+  height: 60%;
+}
+
+.loading-lighter {
+  position: absolute;
+  animation-name: loading-transition;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
+}
+
+@keyframes loading-transition {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.request-error {
+  animation-name: error-transition;
+  animation-timing-function: ease-in-out;
+  animation-duration: 5s;
+
+  visibility: hidden;
+  position: absolute;
+  right: 1%;
+  bottom: 2%;
+  background-color: #842323;
+  color: white;
+  border: 1px solid #cb7474;
+  padding: 20px 100px 20px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+@keyframes error-transition {
+  0% {
+    visibility: visible;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.user-info {
+  font-weight: 500;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.user-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: absolute;
+  top: 10%;
+  width: 600px;
+
+  font-size: 18px;
+  font-weight: bolder;
+
+  border: 1px solid #292929;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.view-on-github {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  position: relative;
+  top: 5%;
+  right: 3%;
+
+  width: 100%;
+}
+
+.profile-link {
+  font-size: 14px;
+  color: #e5e5e5;
+  text-decoration: none;
+}
+
+.user-avatar {
+  border-radius: 50%;
+  width: 30%;
+
+  position: relative;
+  top: -30%;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: relative;
+  top: -20%;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.stats {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+
+  position: relative;
+  top: -10%;
+}
+
+.stat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-size: 24px;
+
+  margin: 20px 0px;
+}
+
+.stat-name {
+  color: #acacac;
+  font-size: 14px;
+}
+
+.repositories-header {
+  position: absolute;
+  top: 50%;
+}
+
+.repositories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  position: absolute;
+  top: 55%;
+}
+
+.repo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 600px;
+  list-style-type: none;
+  text-decoration: none;
+
+  border: 1px solid #292929;
+
+  margin: 10px;
+}
+
+.repo:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.repo:hover .repo-top-line {
+  color: black;
+}
+
+.repo-top-line {
+  font-weight: bolder;
+  color: white;
+  margin: 20px 10px 5px 20px;
+}
+
+.repo-bottom-line {
+  font-weight: bold;
+  color: #acacac;
+  margin: 5px 10px 20px 20px;
+}
+
+.repo-description {
+  width: 330px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+.load-more-button {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bolder;
+
+  color: white;
+  background-color: #0da090;
+
+  border: 1px solid #72f2e4;
+  border-radius: 4px;
+
+  position: relative;
+  top: 10%;
+  width: 600px;
+
+  padding: 10px 0px;
+
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .user-card {
+    width: 95vw;
+  }
+
+  .profile-link-text {
+    display: none;
+  }
+
+  .repo {
+    width: 95vw;
+  }
+  .repo-description {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+  .load-more-button {
+    width: 95vw;
+  }
+}
